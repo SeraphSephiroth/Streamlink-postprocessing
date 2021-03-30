@@ -26,4 +26,5 @@ if ($remove -eq 'y' -or 'Y' -or 'Yes' -or 'yes'){
 		Remove-Item ..\stream.mp4
 		Remove-Item .\stream.description
 		Remove-Item .\stream.jpg
+		Remove-Item .\stream.webp
 }else{exit}
