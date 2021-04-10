@@ -17,7 +17,7 @@ if (-not (Test-Path -LiteralPath ..\ProcessedStreams\$channel\)) {
 
 }
 else {
-    "Cannot create channel directory!"
+    "Cannot create channel directory. Directory may already exist."
 }
 ffmpeg -v debug -i ..\Recordings\$channel\stream.ts -i ..\Recordings\$channel\stream.jpg -map 1 -map 0 -c copy -disposition:0 attached_pic "..\ProcessedStreams\$channel\$($filename + ".mp4")"
 $remove = Read-Host -Prompt 'Do you want to remove the original recording, stream.jpg, and stream.description (Y/N)? Be sure that post processing is complete and that your output has no errors'
